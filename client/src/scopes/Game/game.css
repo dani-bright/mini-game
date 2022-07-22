@@ -1,0 +1,56 @@
+.perso {
+    background: #DBB17F;
+    height: 400px;
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.bucketGroup {
+    position: absolute;
+    bottom: 280px;
+    right: 15px;
+}
+
+.bucket {
+    font-size: 30px;
+    line-height: 60px;
+    width: 70px;
+    height: 70px;
+}
+
+.scoring {
+    background: #000;
+    color: #FEEC66;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+.shotClock {
+    font-size: 20px;
+    border: 4px solid #f81212;
+}
+
+.contain-me {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    bottom: 42px;
+    padding-left: 100px;
+}
+
+.me {
+    display: block;
+    position: relative;
+    width: 300px;
+}
+
+.basket {
+    display: block;
+    position: relative;
+    left: 55px;
+    top: 10px;
+    cursor: pointer;
+}

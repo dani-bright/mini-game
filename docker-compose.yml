@@ -1,0 +1,63 @@
+services:
+  client:
+    image: "tech-test_client"
+    build:
+      context: ./client
+      dockerfile: ../Dockerfile-client
+    ports:
+      - "3000:3000"
+
+  docker-mysql:
+    image: mysql:8
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_DATABASE: smart-bdd
+      MYSQL_ROOT_PASSWORD: smartdb
+      MYSQL_PASSWORD: smartdb
+
+    
+  server:
+    image: "tech-test_server"
+    build:
+      context: ./server
+      dockerfile: ../Dockerfile-server
+    depends_on:
+      - "docker-mysql"
+    ports:
+      - "4242:4242"
+
+# services:
+#   client:
+#     image: node:16
+#     ports:
+#       - "3000:3000"
+#     volumes:
+#       - ./client:/src
+#     working_dir: /src
+#     command: ["npm", "run", "start"]
+#   server:
+#     image: node:16
+#     ports:
+#       - "4242:4242"
+#     volumes:
+#       - ./server:/src
+#     working_dir: /src
+#     command: ["npm", "run", "start"]
+
+#   mysql:
+#     image: mysql:8
+#     ports:
+#       - "3306:3306"
+#     volumes:
+#       - ./init:/docker-entrypoint-initdb.d
+#     environment:
+#       MYSQL_DATABASE: smart-bdd
+#       MYSQL_ROOT_PASSWORD: smartrenting
+#       MYSQL_USER: dbuser
+#       MYSQL_PASSWORD: smartrenting

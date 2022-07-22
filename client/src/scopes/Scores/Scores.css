@@ -1,0 +1,80 @@
+.Scores {
+    display: flex;
+    margin: 12px;
+    padding: 12px;
+    height: 48vh;
+    overflow-y: scroll;
+}
+
+.Scores-header {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    height: 41;
+    color: white;
+}
+
+.table {
+    flex: 2;
+    padding: 0 1rem;
+    border-right: 2px solid #fb9261;
+}
+
+.control {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats {
+    flex: 1;
+    min-height: 100px;
+    margin: 0 12px;
+    padding: 12px;
+    border: 4px solid #fff;
+    color: #fff;
+    position: sticky;
+    top: 0;
+}
+
+.average {
+    font-size: 18px;
+}
+
+span {
+    font-size: 14px;
+}
+
+table {
+    width: 100%;
+    background: #fb9261;
+    margin-top: 1rem;
+    color: #000;
+    border: 2px #000 solid;
+}
+
+.stats table {
+    background: transparent;
+    color: #fff;
+    border: 2px #fff solid;
+}
+
+.stats table tr>td {
+    border-top: 2px #fff solid;
+}
+
+tr>td {
+    border-top: 2px #000 solid;
+}
+
+thead>tr>th:not(:last-child),
+tr>td:not(:last-child) {
+    border-right: 2px #000 solid;
+}
+
+.stats table thead>tr>th:not(:last-child),
+.stats table tr>td:not(:last-child) {
+    border-right: 2px #fff solid;
+}
